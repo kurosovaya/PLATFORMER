@@ -1,4 +1,4 @@
-
+﻿
 class Player {
 
     constructor(image, x, y) {
@@ -340,7 +340,7 @@ class Enemy {
 
 
 function RedrawScene() {
-    ctx.drawImage(background, 0, 0, 3840, 2096);
+    ctx.drawImage(background, 0, 0, scrennWidth, screenHeight);
     player.Redraw()
     currentObjects.forEach(obj => {
         obj.Redraw()
@@ -493,7 +493,7 @@ let levels = {
             funct = function () {
                 for (var i = 0; i < 3840; i += 200)
                 {
-                    currentObjects.push(new Collider("images/GrassTitle.png", i, 1600 + 200, 200, 296))
+                    currentObjects.push(new Collider("images/GrassTitle.png", i, 1600 + 200, 200, 360))
                 }
             }
         ),
@@ -526,14 +526,14 @@ let levels = {
                     ]
             },
 
-            "images/c_bg_0002.png",
+            "images/wp3263282.jpg",
 
             ["images/cover-256.png", 3400, 1600],
 
             funct = function () {
                 for (var i = 0; i < 3840; i += 200)
                 {
-                    currentObjects.push(new Collider("images/GrassTitle.png", i, 1600 + 200, 200, 296))
+                    currentObjects.push(new Collider("images/GrassTitle.png", i, 1600 + 200, 200, 360))
                 }
             }
         ),
@@ -592,7 +592,7 @@ let levels = {
                                                 alert("228")
                                                 alert("All the other kids with the pumped up kicks")
                                                 alert("You'd better run, better run, out run sharaga")
-                                                alert("nonickk9@gmail.com")
+                                                alert("https://github.com/negelvovich/PLATFORMER")
                                             }
                                             count += 1
                                         }
@@ -604,7 +604,7 @@ let levels = {
                             let wolfVar
 
                             wolf = function () {
-                                wolfVar = new Enemy("images/PositivePersonalElephant-small.gif", 1850, -400, 450, 220, 0,
+                                wolfVar = new Enemy("images/PositivePersonalElephant-small.png", 1850, -400, 450, 220, 0,
                                     { x: 1850, y: -400 },
                                     { x: 1850, y: 1300 }, 50)
                                 currentObjects.push(wolfVar)
@@ -652,14 +652,14 @@ let levels = {
                 ]
         },
 
-        "images/pzapwisrt5dy.png",
+        "images/pzapwisrt5dy.jpg",
 
         ["images/cover-256.png", 3400, 1600],
 
         funct = function () {
             for (var i = 0; i < 3840; i += 200)
             {
-                currentObjects.push(new Collider("images/GrassTitle.png", i, 1600 + 200, 200, 296))
+                currentObjects.push(new Collider("images/GrassTitle.png", i, 1600 + 200, 200, 360))
             }
         }
     ),
@@ -674,14 +674,17 @@ let timeEvents = []
 let count = 0
 window.addEventListener("keydown", function (e) { KeyDown(e); });
 window.addEventListener("keyup", function (e) { KeyUp(e); });
-
+let scrennWidth = 1920
+let screenHeight = 1080 
 
 background.onload = function () {
     //разрешение холста
     //почему не 1920 на 1080?
     //не знаю
-    canvals.width = 3840
-    canvals.height = 2096
+    //но лучше это пофиксить
+    //т.к. он пережимает картинку
+    canvals.width = scrennWidth 
+    canvals.height = screenHeight 
 }
 
 start()
