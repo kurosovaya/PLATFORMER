@@ -1,4 +1,8 @@
-﻿
+﻿//Игра PLATFORMER 
+//Версия: 2.2
+//Все права защищены Pluton-Waffen Games
+//https://github.com/negelvovich/PLATFORMER
+
 class Player {
 
     constructor(image, x, y) {
@@ -674,8 +678,8 @@ let timeEvents = []
 let count = 0
 window.addEventListener("keydown", function (e) { KeyDown(e); });
 window.addEventListener("keyup", function (e) { KeyUp(e); });
-let scrennWidth = 1920
-let screenHeight = 1080 
+let scrennWidth = 1920 * 2
+let screenHeight = 1080 * 2
 
 background.onload = function () {
     //разрешение холста
